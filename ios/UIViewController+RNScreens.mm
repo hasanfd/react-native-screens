@@ -5,6 +5,13 @@
 
 @implementation UIViewController (RNScreens)
 
+-(UIRectEdge)preferredScreenEdgesDeferringSystemGestures
+{
+    NSLog(@"UIViewController + RNScreens Entering preferredScreenEdgesDeferringSystemGestures");
+
+    return UIRectEdgeAll;
+}
+
 #if !TARGET_OS_TV
 - (UIViewController *)reactNativeScreensChildViewControllerForStatusBarStyle
 {
