@@ -30,13 +30,15 @@
                      if (@available(iOS 13, *)) {
                        UIWindow *firstWindow = [[[UIApplication sharedApplication] windows] firstObject];
                        if (firstWindow != nil) {
-                         [[firstWindow rootViewController] setNeedsStatusBarAppearanceUpdate];
-                       }
+                          [[firstWindow rootViewController] setNeedsUpdateOfHomeIndicatorAutoHidden];
+                          NSLog(@"Calling setNeedsUpdateOfScreenEdgesDeferringSystemGestures");
+                          [[firstWindow rootViewController] setNeedsUpdateOfScreenEdgesDeferringSystemGestures];                       }
                      } else
 #endif
                      {
-                       [UIApplication.sharedApplication.keyWindow.rootViewController setNeedsStatusBarAppearanceUpdate];
-                     }
+                          [UIApplication.sharedApplication.keyWindow.rootViewController setNeedsUpdateOfHomeIndicatorAutoHidden];
+                          NSLog(@"Calling setNeedsUpdateOfScreenEdgesDeferringSystemGestures");
+                          [UIApplication.sharedApplication.keyWindow.rootViewController setNeedsUpdateOfScreenEdgesDeferringSystemGestures];                     }
                    }];
 #endif
 }
