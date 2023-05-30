@@ -15,7 +15,6 @@
     "lint": "yarn lint-js && yarn lint-android",
     "release": "npm login && release-it",
     "prepare": "bob build && husky install",
-    "postinstall": "patch-package"
   },
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
